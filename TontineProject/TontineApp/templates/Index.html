@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Tontine National</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css"  href="{% static 'css/bootstrap.css' %}"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  
+  <!-- responsive style -->
+  <link rel="stylesheet"  href="{% static 'css/responsive.css' %}"/>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="{% static 'images/03.PNG' %}" alt="" />
+            <span>
+              Tontine National
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="">Accueil <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=""> A propos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Contacts </a>
+              </li>
+            </ul>
+            <div class="user_option">
+              <a href="">
+                <span>
+                  Connexion
+                </span>
+              </a>
+              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form>
+            </div>
+          </div>
+          <div>
+            <div class="custom_menu-btn ">
+              <button>
+                <span class=" s-1">
+
+                </span>
+                <span class="s-2">
+
+                </span>
+                <span class="s-3">
+
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                    <h1>
+                      Sécuriser <br>
+                      l’avenir financier de chacun<br>
+                    </h1>
+                    <p>
+                      Rejoindre notre tontine, c'est s'assurer un filet de sécurité financière. Chaque contribution est une promesse de soutien en cas de besoin. Dans un groupe solidaire, on peut s'entraider et éviter les coups durs. Ensemble, on fait face aux imprévus et on protège nos proches.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'inscription' %}" class="btn-1">
+                        S'inscrire
+                      </a>
+                      <a href="{% url 'Connexion' %}" class="btn-2">
+                        Se Connecter
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container">
+                  <div class="img-box">
+                    <img src="{% static 'images/00.JPEG' %}"  alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                    <h1>
+                      Créer des liens solides<br>
+                      et renforcer l’entraide communautaire <br>
+                    </h1>
+                    <p>
+                      La tontine, c’est bien plus qu’une simple question d’argent, c’est une occasion de renforcer les liens avec vos proches et la communauté. En participant, vous devenez acteur d’un cercle de solidarité où chacun peut compter sur l’autre. C’est aussi un moyen de partager et d’atteindre vos objectifs financiers plus facilement.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'inscription' %}" class="btn-1">
+                        S'inscrire
+                      </a>
+                      <a href="{% url 'Connexion' %}" class="btn-2">
+                        Se Connecter
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container">
+                  <div class="img-box">
+                    <img  src="{% static 'images/01.JPG' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                    <h1>
+                      Possibilité d’obtenir<br>
+                      un financement rapide et sans intérêt <br>
+                    </h1>
+                    <p>
+                      Dans notre tontine, vous avez l'opportunité de bénéficier d'un financement rapide, sans intérêts. C'est une solution idéale en cas de projet urgent, que ce soit pour un investissement personnel ou un besoin familial. Pas de démarches compliquées, juste une aide concrète entre amis et membres de la communauté.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'inscription' %}" class="btn-1">
+                        S'inscrire
+                      </a>
+                      <a href="{% url 'Connexion' %}" class="btn-2">
+                        Se Connecter
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container">
+                  <div class="img-box">
+                    <img src="{% static 'images/02.JPG' %}"alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section ">
+    <div class="container">
+      <p>
+        &copy; <span id="displayDate"></span> All Copie Rights By
+        <a href="https://www.linkedin.com/in/aby-soumar%C3%A9-diouf-3b54a3218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ">Aby Soumaré DIOUF</a>
+      </p>
+    </div>
+  </footer>
+  <!-- end  footer section -->
+
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src= "{% static 'js/custom.js' %}"></script>
+
+
+</body>
+</body>
+
+</html>

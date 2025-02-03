@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Tontine National</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Styles.css' %}">
+  
+  <!-- responsive style -->
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="brand-logo">
+      <img src="{% static 'images/03.PNG' %}" alt="Logo" />
+    </div>
+    <div class="brand-title">Bienvenue</div>
+    
+    {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <!-- Formulaire Django -->
+    <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+      {% csrf_token %}  <!-- CSRF token pour sécuriser le formulaire -->
+      
+      <div class="inputs">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label>Nom</label>
+            <input type="text" class="form-control" name="nom" placeholder="Votre Nom" required />
+          </div>
+          <div class="col-md-6">
+            <label>Prénoms</label>
+            <input type="text" class="form-control" name="prenoms" placeholder="Votre Prénom" required />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" placeholder="exemple@test.com" required />
+          </div>
+          <div class="col-md-6">
+            <label>Téléphone</label>
+            <input type="text" class="form-control" name="telephone" placeholder="exemple : 785301611" required />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label>Ville</label>
+            <input type="text" class="form-control" name="ville" placeholder="exemple : Dakar" required />
+          </div>
+          <div class="col-md-6">
+            <label for="imageUpload">Carte d'identité :</label>
+            <input type="file" class="form-control" name="cni" accept="image/*" required />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label>Mot de passe</label>
+            <input type="password" class="form-control" name="mdp" placeholder="Minimum 6 caractères" required />
+          </div>
+          <div class="col-md-6">
+            <label>Confirmer Mot de passe</label>
+            <input type="password" class="form-control" name="mdp_confirm" placeholder="Minimum 6 caractères" required />
+          </div>
+        </div>
+
+        <!-- Boutons -->
+        <div class="button-container d-flex justify-content-between mt-4">
+          <a href="{% url 'index' %}" style="width: 48%;">
+            <button type="button" class="btn btn-danger">Retour</button>
+          </a>
+          <button type="submit" class="btn btn-success" style="width: 48%;">Valider</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+
+</html>

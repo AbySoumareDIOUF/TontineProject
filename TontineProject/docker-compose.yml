@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8.0  # Utilise l'image officielle de MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: Biba  # Le mot de passe root de MySQL
+      MYSQL_DATABASE: Tontine   # Nom de la base de données
+      MYSQL_USER: root           # L'utilisateur MySQL
+      MYSQL_PASSWORD: Biba       # Le mot de passe pour l'utilisateur
+    volumes:
+      - mysql_data:/var/lib/mysql  # Persistance des données de la base de données
+    ports:
+      - "3306:3306"  # Expose le port MySQL
+
+  web:
+    build: .
+    command: gunicorn TontineProject.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app  # Volume pour les fichiers du projet
+    ports:
+      - "8000:8000"  # Expose le port 8000 pour Django
+    depends_on:
+      - db  # Django dépend de la base de données
+
+volumes:
+  mysql_data:
